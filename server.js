@@ -4,8 +4,8 @@ const app = express();
 const PORT = process.env.port || 3001;
 
 // links to routes
-const html = ('./routes/html');
-const api = ('./routes/api');
+const htmlRoute = ('./routes/html');
+const apiRoute = ('./routes/api');
 
 // middleware
 app.use(express.json());
@@ -13,8 +13,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // use routes
-app.use('/api', api);
-app.use('/', html);
+app.use('/api', apiRoute);
+app.use('/', htmlRoute);
 
 // listen
-app.listen(PORT, () => console.log(`listening on port ${PORT}`));
+app.listen(PORT, () => {
+    console.log(`listening on port ${PORT}`);
+});
