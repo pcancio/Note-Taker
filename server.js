@@ -2,12 +2,10 @@
 const express = require('express');
 const PORT = process.env.port || 3001;
 const app = express();
+const html = require('./routes/html');
+const api = require('./routes/api');
 
-// links to routes
-const html = ('./routes/html');
-const api = ('./routes/api');
-
-// middleware
+// use 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
