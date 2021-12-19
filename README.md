@@ -28,4 +28,4 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 # Links
 - <a href= "https://github.com/pcancio/Note-Taker">github</a>
-- heroku app: 
+- <a href= "https://pure-mountain-35915.herokuapp.com/"> heroku app</a>
