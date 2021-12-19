@@ -35,5 +35,13 @@ app.post('/api/notes', (req, res) => {
     fs.writeFileSync('./db/db.json', JSON.stringify(notesArray), 'UTF-8')
     res.json(newNote)
 });
+//  delete command
+app.delete('/api/notes/:id', (req, res) => {
+    const notesArray = getJSON();
+    const deletedNote = req.params.id;
+    const id = parseInt(deletedNote);
+    const updatedData = notesArray.filter((note) => note.id != id)
+    fs.writeFileSync('./db/db.json', JSON.stringify(updatedData), 'UTF-8');
+});
 
 app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
